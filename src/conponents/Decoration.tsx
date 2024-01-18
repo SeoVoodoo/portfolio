@@ -17,7 +17,7 @@ export const Plus = () => {
 
 const StyledPlus = styled.div`
     position: absolute;
-    top: 82px;
+    top: 2px;
     left: 35%;    
 `
 
@@ -37,7 +37,7 @@ export const Circle = () => {
 
 const StyledCircle = styled.div`
     position: absolute;
-    top: 515px;
+    top: 435px;
     right: 8%;    
 `
 

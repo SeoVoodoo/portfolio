@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { Logo } from "../../conponents/logo/Logo";
 import { Menu } from "../../conponents/menu/Menu";
 import { FlexWrapper } from "../../conponents/FlexWrapper";
-import { About } from "../../conponents/About";
 import { ToggleTheme } from "../../conponents/ToggleTheme";
-import { Circle, Plus } from "../../conponents/Decoration";
-import { Skills } from "../../conponents/skills/Skills";
+
 
 
 const ancors = ["Home", "Projects", "About", "Contact"];
@@ -14,16 +12,14 @@ const ancors = ["Home", "Projects", "About", "Contact"];
 export const Header = () => {
 
     return (        
-        <StyledHeader> 
-            <Plus /> 
-            <Circle />          
-            <FlexWrapper justify={"space-between"} bottom={"75px"}>
+        <StyledHeader>                     
+            <FlexWrapper align={'center'} >
                 <Logo />
-                <Menu menuItems={ancors}/>
-                <ToggleTheme />
-            </FlexWrapper>            
-            <About />
-            <Skills />
+                <Wrap>
+                    <Menu menuItems={ancors}/>
+                    <ToggleTheme />
+                </Wrap>
+            </FlexWrapper>
         </StyledHeader>        
     );
 }
@@ -32,11 +28,15 @@ export const Header = () => {
 const StyledHeader = styled.header`    
     background-image: linear-gradient(to right, #A6BCFA 30%, #FFFFFF 30% );
     background-repeat: no-repeat;
-    background-position: 0 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;    
-    height: 100vh;
-       
+    background-position: 0 0;            
+    min-height: 10vh;
+    height: 100%;
+    padding: 33px 43px 0 35px;
+    /* border: 1px solid red; */
+`
+const Wrap = styled.div`
+    max-width: 100%;
+    margin-left: auto;
+    
 `
 

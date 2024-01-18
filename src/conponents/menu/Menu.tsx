@@ -19,6 +19,8 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 }
 
 const StyledMenu = styled.nav`
+    display: inline-block;
+    vertical-align: middle;
     ul {
         display: flex;
         gap: 30px;

@@ -6,7 +6,7 @@ import { StyledBtn } from './Button.styled';
 import { StyledLink } from './Link.styled';
 import { FlexWrapper } from './FlexWrapper';
 
-export const About = () => {
+export const AboutInner = () => {
     return (
         <StyledAbout>
 
