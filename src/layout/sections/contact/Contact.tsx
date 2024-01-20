@@ -49,7 +49,7 @@ export const Contact = () => {
 };
 
 const StyledContact = styled.section`
-    background-color: #fff;
+    background-color: ${({theme}) => theme.bg};
     min-height: 50vh;    
 `
 const Box = styled.div`

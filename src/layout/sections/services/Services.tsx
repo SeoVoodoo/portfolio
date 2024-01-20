@@ -41,7 +41,7 @@ export const Services = () => {
 };
 
 const StyledServices = styled.section`
-    background-color: #e7d6f5;
+    background-color: ${({theme}) => theme.bg};
     min-height: 50vh;
     /* width: 100%;
     margin: 0 auto; */

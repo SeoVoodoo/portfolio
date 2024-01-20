@@ -29,7 +29,7 @@ const StyledSkill = styled.div`
     width: 161px;
     height: 91px;
     border-radius: 24px;
-    background: #A6BCFA;
+    background: ${({theme}) => theme.bgElement};
     box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.15);
     text-align: center;
 
@@ -44,7 +44,7 @@ const StyledSkill = styled.div`
         height: 70px;
         margin: -30px auto 10px;        
         border-radius: 50%;
-        border: 10px solid #FFF;
+        border: 10px solid ${({theme}) => theme.bg};;
         overflow: hidden;
         background-color: #000B1D;
     }

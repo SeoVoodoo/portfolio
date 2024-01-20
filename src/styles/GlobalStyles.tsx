@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { myTheme } from "./Theme.styled";
+
 
 export const GlobalStyles = createGlobalStyle`
     *,
@@ -11,16 +11,25 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        /* background-color: ${myTheme.colors.grey.dark}; */
+        background-color: ${({theme}) => theme.bg};
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
           'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
           sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-      }
+        //transition: all 0.25s linear;
+        font-weight: 400;
+        line-height: 120%;
+        font-style: normal;
+        font-size: 16px;
+    }
+
+    
     
     a {
       text-decoration: none;
+      color: ${({theme}) => theme.colors.link};
+      transition: color 0.25s linear;
     }
 
     ul {

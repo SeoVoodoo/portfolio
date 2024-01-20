@@ -13,7 +13,7 @@ export const Learning = () => {
 };
 
 const StyledLearning = styled.section`
-    background-color: #A5BBF8;
+    background-color: ${({theme}) => theme.bgElement};
     min-height: 80vh;
     padding: 62px 0 76px 75px;
 `

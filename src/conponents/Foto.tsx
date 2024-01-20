@@ -13,6 +13,7 @@ export const Foto = () => {
 const StyledFoto = styled.div`
     width: 400px;
     height: 400px;
+    flex-shrink: 0;
     border: 25px solid #FFF;
     border-radius: 50%;    
     overflow: hidden;

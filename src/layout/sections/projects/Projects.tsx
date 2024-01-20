@@ -29,7 +29,7 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
 min-height: 100vh;
-background-color: #f5f5f5;    
+background-color: ${({theme}) => theme.bg};    
 `
 const List = styled.ul`
     display: flex;

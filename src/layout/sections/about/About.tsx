@@ -5,6 +5,13 @@ import { Skills } from '../../../conponents/skills/Skills';
 import { Container } from '../../../conponents/Container';
 import { FlexWrapper } from '../../../conponents/FlexWrapper';
 
+
+// type AboutPropsType = {
+//     themeName?: string,
+//     setThemeName?: Function        
+// }
+
+
 export const About = () => {
     return (
         <StyledAbout>
@@ -21,7 +28,7 @@ export const About = () => {
 };
 
 const StyledAbout = styled.section`
-    background-image: linear-gradient(to right, #A6BCFA 30%, #FFFFFF 30% );
+    background-image: ${({theme}) => theme.bgImage};
     background-repeat: no-repeat;
     background-position: 0 0;
     padding-top: 75px;    

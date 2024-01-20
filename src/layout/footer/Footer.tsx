@@ -13,6 +13,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.section`
     background-image: url(${bgFooter});
+    background-color: ${({theme}) => theme.bg};
     background-repeat: repeat-y;
     min-height: 150px;
     display: flex;

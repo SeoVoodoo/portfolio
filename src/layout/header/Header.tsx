@@ -7,9 +7,12 @@ import { ToggleTheme } from "../../conponents/ToggleTheme";
 
 
 const ancors = ["Home", "Projects", "About", "Contact"];
-   
 
-export const Header = () => {
+type HeaderPropsType = {
+    handleToggleTheme?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void//(e: React.MouseEvent<HTMLAnchorElement> | undefined) => void
+} 
+
+export const Header = (props: HeaderPropsType) => {
 
     return (        
         <StyledHeader>                     
@@ -17,7 +20,7 @@ export const Header = () => {
                 <Logo />
                 <Wrap>
                     <Menu menuItems={ancors}/>
-                    <ToggleTheme />
+                    <ToggleTheme handleToggleTheme={props.handleToggleTheme} />
                 </Wrap>
             </FlexWrapper>
         </StyledHeader>        
@@ -26,12 +29,13 @@ export const Header = () => {
 
 
 const StyledHeader = styled.header`    
-    background-image: linear-gradient(to right, #A6BCFA 30%, #FFFFFF 30% );
+    background-image: ${({theme}) => theme.bgImage};
     background-repeat: no-repeat;
     background-position: 0 0;            
     min-height: 10vh;
     height: 100%;
     padding: 33px 43px 0 35px;
+    //transition: all 0.25s linear;
     /* border: 1px solid red; */
 `
 const Wrap = styled.div`
