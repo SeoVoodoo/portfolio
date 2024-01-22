@@ -7,8 +7,22 @@ export const myTheme = {
         colors: {
             link: "#FFFFFF",
             h2: "#FFFFFF",
+            h3: "#FFFFFF",            
             border: "rgba(71, 71, 71, 0.3)",
-            text: "#FFFFFF"
+            text: "#FFFFFF",
+            wrapper: "#353535",
+            wrapHover: "#24335C",
+            btn: "#FFFFFF",
+            btnAncor: "#353535",
+            btnAncorHover: "#FFFFFF",
+            prevLink: "#A6BCFA",
+            tabs: {
+                color: "#FFFFFF",
+                bgColor: "#222222",
+                bgColorHover: "#24335C",
+                border: "#4C546C",
+                borderHover: "#24335C"
+            }            
         }
     },
     light: {
@@ -19,8 +33,22 @@ export const myTheme = {
         colors: {
             link: "#393939",
             h2: "#000000",
+            h3: "#2157F2",            
             border: "#FFFFFF",
-            text: "#393939" 
+            text: "#393939",
+            wrapper: "#F9F9FC",
+            wrapHover: "#A6BCFA",
+            btn: "#2157F2",            
+            btnAncor: "#FFFFFF",
+            btnAncorHover: "#A6BCFA",
+            prevLink: "#2157F2",
+            tabs: {
+                color: "#1F1F1F",
+                bgColor: "#F8FAFF",
+                bgColorHover: "#A6BCFA",
+                border: "#A6BCFA",
+                borderHover: "#A6BCFA"
+            }
         }
     },
     media: {

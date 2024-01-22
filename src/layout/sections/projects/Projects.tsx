@@ -1,29 +1,32 @@
 import styled from "styled-components";
 import { SectionTitle } from "../../../conponents/SectionTitle";
-import { Menu } from "../../../conponents/menu/Menu";
 import { dataProjects } from "../../../assets/data/dataProjects";
 import { Project } from "./project/Project";
+import { Container } from "../../../conponents/Container";
+import { TabMenu } from "./tabMenu/TabMenu";
 
 const tabs = ["Story", "Post", "Banner", "Trailer", "Desighn", "More"];
 
 export const Projects = () => {
     return (
         <StyledProjects>
-            <SectionTitle>Projects</SectionTitle>
-            <Menu menuItems={tabs} />            
-                <List>
-                    {dataProjects.map(project => { 
+            <Container>
+                <SectionTitle>Projects</SectionTitle>
+                <TabMenu menuItems={tabs} />            
+                    <List>
+                        {dataProjects.map(project => { 
 
-                        return <li key={project.idProject}>
-                            <Project                            
-                                src={project.src}
-                                title={project.title}                            
-                            />
-                        </li>
-                        
-                    })}                    
-                </List>                        
-        </StyledProjects>
+                            return <li key={project.idProject}>
+                                <Project                            
+                                    src={project.src}
+                                    title={project.title}                            
+                                />
+                            </li>
+                            
+                        })}                    
+                    </List>   
+            </Container>                     
+        </StyledProjects>        
     );
 };
 

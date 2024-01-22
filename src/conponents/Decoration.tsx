@@ -17,7 +17,7 @@ export const Plus = () => {
 
 const StyledPlus = styled.div`
     position: absolute;
-    top: 2px;
+    top: -12px;
     left: 35%;    
 `
 

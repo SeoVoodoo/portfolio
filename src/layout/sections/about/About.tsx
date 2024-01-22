@@ -30,8 +30,7 @@ export const About = () => {
 const StyledAbout = styled.section`
     background-image: ${({theme}) => theme.bgImage};
     background-repeat: no-repeat;
-    background-position: 0 0;
-    padding-top: 75px;    
+    background-position: 0 0;        
     position: relative;    
     height: 90vh;    
 `

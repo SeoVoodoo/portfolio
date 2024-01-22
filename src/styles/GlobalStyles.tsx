@@ -24,7 +24,11 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 16px;
     }
 
-    
+    section {
+      padding: 60px 0 90px;
+    }
+
+     
     
     a {
       text-decoration: none;

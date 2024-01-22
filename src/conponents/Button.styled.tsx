@@ -14,3 +14,11 @@ export const StyledBtn = styled.button<ButtonPropsType>`
     padding: ${props => props.padding || "4px 18px 4px 19px"};
     color: ${props => props.color || "white"};    
 `
+
+export const StyledCardBtn = styled(StyledBtn)`
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 148%;
+    background-color: ${({theme}) => theme.colors.btn};   
+    color: ${({theme}) => theme.colors.btnAncor};
+`
