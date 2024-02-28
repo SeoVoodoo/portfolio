@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
+// import telegram from "../../assets/images/telegramm.svg"
 
 type SocialItemPropsType = {
     link?: string,
@@ -7,12 +8,14 @@ type SocialItemPropsType = {
     width?: string,
     height?: string,
     viewBox?: string
+    src?: string
 }
 
 
 export const SocialItem = (props: SocialItemPropsType) => {
     return (        
             <StyledSocialItem>
+                {/* <div><img src={props.src} alt="#" /></div> */}
                 <SocialLink href={props.link}>
                     <Icon 
                         id={props.id} 

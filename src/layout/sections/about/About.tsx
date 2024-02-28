@@ -1,37 +1,28 @@
-import { styled } from 'styled-components';
+import React from 'react';
 import { Circle, Plus } from '../../../conponents/Decoration';
-import { AboutInner } from '../../../conponents/AboutInner';
-import { Skills } from '../../../conponents/skills/Skills';
+import { AboutInner } from './AboutInner';
+
 import { Container } from '../../../conponents/Container';
 import { FlexWrapper } from '../../../conponents/FlexWrapper';
+import { S } from './About_Styles';
 
 
-// type AboutPropsType = {
-//     themeName?: string,
-//     setThemeName?: Function        
-// }
 
-
-export const About = () => {
+export const About: React.FC = () => {
     return (
-        <StyledAbout>
+        <S.About id={"home"}>
             <Container>
                 <FlexWrapper direction={'column'}>
-                    <Plus /> 
-                    <Circle />
-                    <AboutInner />
-                    <Skills />
+                    <S.WrapAboutInner>
+                        <Plus /> 
+                        <Circle />
+                        <AboutInner />
+                    </S.WrapAboutInner>
                 </FlexWrapper>                
             </Container>
-        </StyledAbout>
+        </S.About>
     );
 };
 
-const StyledAbout = styled.section`
-    background-image: ${({theme}) => theme.bgImage};
-    background-repeat: no-repeat;
-    background-position: 0 0;        
-    position: relative;    
-    height: 90vh;    
-`
+
 

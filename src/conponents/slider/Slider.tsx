@@ -1,26 +1,26 @@
 import { styled } from 'styled-components';
-import { FlexWrapper } from '../FlexWrapper';
 
-type SliderPropsType = {
-    title: string
-} 
 
-export const Slider = (props: SliderPropsType) => {
+
+ 
+
+export const Slider = () => {
     return (
         <StyledSlider>
-         <Title>{props.title}</Title>
-         <FlexWrapper gap={'12px'}>
-            <Slide></Slide>
-            <Slide></Slide>
-            <Slide></Slide>
-            <Slide></Slide>
-         </FlexWrapper>                    
+         <Title>{}</Title>
+         <SlideWrapper>
+            <Slide>1</Slide>
+            <Slide>2</Slide>
+            <Slide>3</Slide>
+            <Slide>4</Slide>                      
+         </SlideWrapper>                    
         </StyledSlider>
     );
 };
 
 const StyledSlider = styled.div`
-    margin-bottom: 20px;        
+    margin-bottom: 20px; 
+    margin-left: 80px;       
 `
 
 const Title = styled.h3`
@@ -28,9 +28,17 @@ const Title = styled.h3`
     color: white;   
 `
 
+const SlideWrapper = styled.div`
+    display: flex;
+    gap: 12px;
+    overflow: hidden;
+`
+
 const Slide = styled.div`
     width: 330px;
     height: 192px;
+    flex-grow: 0;
+    flex-shrink: 0;
     border-radius: 9px;
     background: #D9D9D9;
     box-shadow: 5px 6px 10px 0px rgba(0, 0, 0, 0.10);    

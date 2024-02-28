@@ -1,31 +1,15 @@
-import { styled } from "styled-components";
-import bgFooter from "../../assets/images/wave.svg";
+import React from "react";
+import { S } from "./Footer_Styles";
 
-export const Footer = () => {
+
+export const Footer: React.FC = () => {
     return (
-        <StyledFooter>
-            <Name>Coded by Alireza Kavousy nezhad</Name>
-            <Text>All Rights Reserved 2022</Text>            
-        </StyledFooter>
+        <S.Footer> 
+            <S.Wave></S.Wave>          
+            <S.Wrap>
+                <S.Name>Coded by Alireza Kavousy nezhad</S.Name>
+                <S.Text>All Rights Reserved 2022</S.Text>
+            </S.Wrap>                    
+        </S.Footer>
     );
 };
-
-
-const StyledFooter = styled.section`
-    background-image: url(${bgFooter});
-    background-color: ${({theme}) => theme.bg};
-    background-repeat: repeat-y;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-`
-const Name = styled.span`
-
-`
-const Text = styled.small`
-
-`
-

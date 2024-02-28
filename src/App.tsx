@@ -11,6 +11,9 @@ import { Learning } from './layout/sections/learning/Learning';
 import { Contact } from './layout/sections/contact/Contact';
 import { Footer } from './layout/footer/Footer';
 import { useEffect, useState } from 'react';
+import { Skills } from './layout/sections/skills/Skills';
+import { Particle } from './conponents/particle/Particle';
+import { GoTopBtn } from './conponents/goTopBtn/GoTopBtn';
 
 function App() {
   const [themeName, setThemeName] = useState('light');
@@ -36,6 +39,7 @@ function App() {
     <ThemeProvider theme={themeName === 'light' ? myTheme.light : myTheme.dark}>
       <>
         <GlobalStyles />
+        <Particle />
         <Header 
           handleToggleTheme = {handleToggleTheme}
         />
@@ -43,12 +47,14 @@ function App() {
           // themeName = {themeName}
           // setThemeName = {setThemeName}
         />
+        <Skills />
         <Projects />
         <LocationMap />
         <Services />
         <Learning />
         <Contact />
         <Footer /> 
+        <GoTopBtn />
       </>     
     </ThemeProvider>
   );

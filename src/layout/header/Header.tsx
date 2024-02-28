@@ -1,46 +1,43 @@
-import styled from "styled-components";
+import React from 'react';
 import { Logo } from "../../conponents/logo/Logo";
-import { Menu } from "../../conponents/menu/Menu";
+import { DesktopMenu } from "./headerMenu/desktopMenu/DesktopMenu";
 import { FlexWrapper } from "../../conponents/FlexWrapper";
 import { ToggleTheme } from "../../conponents/ToggleTheme";
+import { MobileMenu } from "./headerMenu/mobileMenu/MobileMenu";
+import { S } from './Header_Styles';
 
 
 
-const ancors = ["Home", "Projects", "About", "Contact"];
+
 
 type HeaderPropsType = {
     handleToggleTheme?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void//(e: React.MouseEvent<HTMLAnchorElement> | undefined) => void
 } 
 
-export const Header = (props: HeaderPropsType) => {
+export const Header: React.FC<HeaderPropsType> = (props: HeaderPropsType) => {
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 576;
+    const handleWindowResize = () => setWidth(window.innerWidth);
+
+    React.useEffect(() => {        
+        window.addEventListener("resize", handleWindowResize);        
+        return () => window.removeEventListener("resize", handleWindowResize);
+      }, []);
 
     return (        
-        <StyledHeader>                     
+        <S.Header>                     
             <FlexWrapper align={'center'} >
                 <Logo />
-                <Wrap>
-                    <Menu menuItems={ancors}/>
+                <S.Wrap>
+                    {width > breakpoint ? <DesktopMenu /> : <MobileMenu />}
                     <ToggleTheme handleToggleTheme={props.handleToggleTheme} />
-                </Wrap>
+                </S.Wrap>
             </FlexWrapper>
-        </StyledHeader>        
+        </S.Header>        
     );
 }
 
 
-const StyledHeader = styled.header`    
-    background-image: ${({theme}) => theme.bgImage};
-    background-repeat: no-repeat;
-    background-position: 0 0;            
-    min-height: 10vh;
-    height: 100%;
-    padding: 33px 43px 0 35px;
-    //transition: all 0.25s linear;
-    /* border: 1px solid red; */
-`
-const Wrap = styled.div`
-    max-width: 100%;
-    margin-left: auto;
-    
-`
+
 

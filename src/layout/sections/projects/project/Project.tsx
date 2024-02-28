@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { StyledCardBtn } from "../../../../conponents/Button.styled";
-import { StyledLink } from "../../../../conponents/Link.styled";
+
 import { FlexWrapper } from "../../../../conponents/FlexWrapper";
 
 type ProjectPropsType = {
@@ -12,8 +12,7 @@ type ProjectPropsType = {
 export const Project = (props: ProjectPropsType) => {
     
     return (
-        <StyledProject src={props.src} title={props.title} >
-            {/* <Image src={props.src}/> */}
+        <StyledProject src={props.src} title={props.title}>            
             <ContentWrapper>
                 <Title>{props.title}</Title>
                 <FlexWrapper justify="space-between" align="center">
@@ -27,11 +26,17 @@ export const Project = (props: ProjectPropsType) => {
 
 const StyledProject = styled.div<ProjectPropsType>`
     background-image:url(${props => props.src});
-    max-width: 270px;
-    width: 100%;
-    min-height: 394px;
+    background-position: center;
+    background-size: cover;
+
     border-radius: 26px;
-    padding-top: auto;
+   
+    /* max-width: 270px; */
+    
+    width: 100%;
+    height: 100%;    
+    /* min-height: 394px;  */
+    
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -53,18 +58,32 @@ const StyledProject = styled.div<ProjectPropsType>`
     &:hover a {
         color: #FFFFFF;
     }
+
+    ${StyledCardBtn} {
+        @media ${({theme}) => theme.media.mobile} {
+            font-size: 10px;
+            padding: 2px 10px;
+        }
+    }    
 `
 const ContentWrapper = styled.div`    
     background-color: ${({theme}) => theme.colors.wrapper};
     padding: 20px 20px 25px; 
-    transition: all .3s linear;   
+    border-radius: 0 0 26px 26px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    /* transition: all .3s linear;    */
 `
 
 const Title = styled.h3`
     font-size: 20px;
     line-height: 150%;
     color: ${({theme}) => theme.colors.h3};
-    margin-bottom: 25px;    
+    margin-bottom: 25px; 
+    
+    @media ${({theme}) => theme.media.mobile} {
+        font-size: 12px;
+    }
+
 `
 
 const Link = styled.a`
@@ -72,7 +91,10 @@ const Link = styled.a`
     font-size: 14px;
     line-height: 148%;
     cursor: pointer;
-    transition: color .3s linear;
+    
+    @media ${({theme}) => theme.media.mobile} {
+        font-size: 10px;        
+    }
 `
 
 

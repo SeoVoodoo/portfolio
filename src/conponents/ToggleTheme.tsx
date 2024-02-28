@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { styled } from 'styled-components';
 import { Icon } from './icon/Icon';
 import { MouseEventHandler } from 'react';
@@ -7,7 +7,7 @@ type ToggleThemePropsType = {
     handleToggleTheme?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void//(e: React.MouseEvent<HTMLAnchorElement> | undefined) => void
 }
 
-export const ToggleTheme = (props: ToggleThemePropsType) => {    
+export const ToggleTheme: React.FC<ToggleThemePropsType> = (props: ToggleThemePropsType) => {    
 
     return (        
             <Link onClick={props.handleToggleTheme}>            
